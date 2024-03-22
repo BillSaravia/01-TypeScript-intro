@@ -1,30 +1,29 @@
 import axios from 'axios';
-import { Move, PokeapiResponse } from '../interfaces/pokeapi-response.interface';
+import { Move, PokeapiReponse } from '../interfaces/pokeapi-response.interface';
 
 export class Pokemon {
-    
 
-    get imageUrl(): string { 
+    get imageUrl(): string {
         return `https://pokemon.com/${ this.id }.jpg`;
     }
-    
-    constructor( 
+  
+    constructor(
         public readonly id: number, 
         public name: string,
-        //public imageUrl: string, 
+        // Todo: inyectar dependencias
+
     ) {}
 
-    scream(){
+    scream() {
         console.log(`${ this.name.toUpperCase() }!!!`);
     }
 
-    speak(){
-        console.log(` ${ this.name }, ${ this.name } `);
+    speak() {
+        console.log(`${ this.name }, ${ this.name }`);
     }
 
     async getMoves(): Promise<Move[]> {
-
-        const {  data } = await axios.get<PokeapiResponse>('https://pokeapi.co/api/v2/pokemon/4'); 
+        const { data } = await axios.get<PokeapiReponse>('https://pokeapi.co/api/v2/pokemon/4');
         console.log( data.moves );
         
         return data.moves;
@@ -32,16 +31,6 @@ export class Pokemon {
 
 }
 
+export const charmander = new Pokemon( 4, 'Charmander' );
 
-export const charmander = new Pokemon( 4, 'charmander')
-
-// charmander.id = 10;
-// charmander.name = 'pikachu';
-
-// console.log(charmander.imageUrl);
-
-// charmander.scream();
-// charmander.speak();
-
-// console.log ( charmander.getMoves() );
 charmander.getMoves();

@@ -1,9 +1,6 @@
-export const pokemonIds = [1,20,30,34,75]
 
-// export const Pokemon = {
-//     id: 1,
-//     name: 'Bulbasaur',
-// }
+export const pokemonIds = [1,20,30,34,66];
+
 
 interface Pokemon {
     id: number;
@@ -17,14 +14,14 @@ export const bulbasaur:Pokemon = {
     age: 2
 }
 
-export const charmander:Pokemon = {
+export const charmander: Pokemon = {
     id: 4,
-    name: 'Bulbasaur',
-    age: 2
+    name: 'Charmander',
+    age: 1
 }
 
-export const pokemons:Pokemon[] = [];
+export const pokemons: Pokemon[] = [];
 
-pokemons.push( charmander, bulbasaur)
+pokemons.push( charmander, bulbasaur );
 
 console.log(pokemons)
