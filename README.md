@@ -1,4 +1,4 @@
-# TypeScript introducción para Nest
+# TypeScript introducción
 Proyecto respaldo para curso de Nest en la parte de introducción a TypeScript.
 
 ## No olvidar ejecutar
